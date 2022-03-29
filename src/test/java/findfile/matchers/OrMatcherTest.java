@@ -39,8 +39,8 @@ public class OrMatcherTest {
         when(trueMatcher1.matches(any())).thenReturn(true);
         when(trueMatcher2.matches(any())).thenReturn(true);
 
-        AndMatcher andMatcher = new AndMatcher(Arrays.asList(trueMatcher1, trueMatcher2));
-        assertTrue(andMatcher.matches(mock(File.class)));
+        OrMatcher orMatcher = new OrMatcher(Arrays.asList(trueMatcher1, trueMatcher2));
+        assertTrue(orMatcher.matches(mock(File.class)));
     }
 
     @Test
