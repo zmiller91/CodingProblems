@@ -11,6 +11,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class OrMatcher implements Matcher {
 
     private final List<Matcher> matchers;
+
     /**
      * Public constructor of the OrMatcher.
      *

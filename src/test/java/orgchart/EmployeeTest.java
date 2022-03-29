@@ -65,7 +65,6 @@ public class EmployeeTest {
 
         // This shouldnt
         assertEquals(220, mgr1.getOrgCost());
-
     }
 
     @Test
@@ -81,7 +80,6 @@ public class EmployeeTest {
 
         // This shouldn't
         assertEquals(120, mgr2.getOrgCost());
-
     }
 
     private Employee employee(String name, double salary) {

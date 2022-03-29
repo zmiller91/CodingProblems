@@ -1,6 +1,5 @@
 package biginteger;
 
-import biginteger.BigInteger;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -89,5 +88,4 @@ public class BigIntegerTest {
         BigInteger second = new BigInteger("123");
         assertTrue(first.equals(second));
     }
-
 }
