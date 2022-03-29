@@ -20,13 +20,13 @@ an iteration:
 ```java
 String a = "123";
 String b = "456";
-for (int i = 0; i < Math.max(a.length, b.length); i++) {
+for (int i = 0; i < Math.max(a.length(), b.length()); i++) {
     ...
 }
 ```
 
-With sufficiently large integers it's possible that the results of `.length` and `size` would be greater than Java's
-`Integer.MAX_INT` which would result in the value will be an overflown integer. Representing the BigInteger as a 
+With sufficiently large integers it's possible that the results of `length` and `size` would be greater than Java's
+`Integer.MAX_VALUE` which would result in an overflown integer value. Representing the BigInteger as a 
 LinkedList can avoid these issues, as is proposed in `BigInteger.java`.
 
 Of course this solution assumes infinite memory. If memory were constrained then a potential implementation may involve 
@@ -41,7 +41,7 @@ simply traverse a directory structure and find all files that match the provided
 deeper than just 1 evaluation criteria. 
 
 What if we wanted to add a second, third, fourth, fith, or Nth criteria? What if I wanted to evaluate against multiple 
-criteria using `and` and `or`operators? The problem quickly more complicated as new requirements are added.  The 
+criteria using `and` and `or`operators? The problem quickly becomes more complicated as new requirements are added.  The 
 solution is to use inheritance to create a `Matcher` interface. 
 
 ```java

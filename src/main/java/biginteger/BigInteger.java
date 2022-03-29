@@ -45,17 +45,14 @@ public class BigInteger {
      * @return sum of two BigIntegers
      */
     public BigInteger add(BigInteger bigint) {
-
-        if (bigint == null) {
-            throw new IllegalArgumentException("Input cannot be null.");
-        }
+        checkNotNull(bigint);
 
         BigInteger solution = new BigInteger();
         Node a = bigint.reversedIntegerList;
         Node b = this.reversedIntegerList;
 
         int carry = 0;
-        Node last = null;
+        Node lastDigit = null;
         while (a != null || b != null) {
 
             int aint = a != null ? a.value : 0;
@@ -65,20 +62,20 @@ public class BigInteger {
             Node digit = new Node(sum % 10);
             carry = sum / 10;
 
-            if (solution.reversedIntegerList == null) {
+            if (lastDigit == null) {
                 solution.reversedIntegerList = digit;
             } else {
-                last.next = digit;
+                lastDigit.next = digit;
             }
 
-            last = digit;
+            lastDigit = digit;
             a = a != null ? a.next : null;
-            b = b!= null ? b.next : null;
+            b = b != null ? b.next : null;
 
         }
 
         if (carry != 0) {
-            last.next = new Node(carry);
+            lastDigit.next = new Node(carry);
         }
 
         return solution;
@@ -89,7 +86,7 @@ public class BigInteger {
      * Two big integers are considered to be equal if they represent the same numbers.
      *
      * @param obj to compare against
-     * @return
+     * @return true if equal, false otherwise
      */
     @Override
     public boolean equals(Object obj) {

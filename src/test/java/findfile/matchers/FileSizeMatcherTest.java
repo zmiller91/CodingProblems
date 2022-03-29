@@ -37,16 +37,16 @@ public class FileSizeMatcherTest {
                 Arguments.of(10, 100, SizeOperator.LT, true, "LT returns true when LT"),
 
                 Arguments.of(100, 10, SizeOperator.LTEQ, false, "LTEQ returns false when GT"),
-                Arguments.of(10, 100, SizeOperator.LTEQ, true, "LTEQ returns true when LT"),
                 Arguments.of(100, 100, SizeOperator.LTEQ, true, "LTEQ returns true when EQ"),
+                Arguments.of(10, 100, SizeOperator.LTEQ, true, "LTEQ returns true when LT"),
 
                 Arguments.of(10, 100, SizeOperator.GT, false, "GT returns false when LT"),
                 Arguments.of(100, 100, SizeOperator.GT, false, "GT returns false when EQ"),
                 Arguments.of(100, 10, SizeOperator.GT, true, "GT returns true when GT"),
 
                 Arguments.of(10, 100, SizeOperator.GTEQ, false, "GTEQ returns false when LT"),
-                Arguments.of(100, 100, SizeOperator.GTEQ, true, "GTEQ returns true when GT"),
-                Arguments.of(100, 10, SizeOperator.GTEQ, true, "GTEQ returns true when EQ")
+                Arguments.of(100, 10, SizeOperator.GTEQ, true, "GTEQ returns true when EQ"),
+                Arguments.of(100, 100, SizeOperator.GTEQ, true, "GTEQ returns true when GT")
         );
     }
 

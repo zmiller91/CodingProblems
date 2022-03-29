@@ -41,9 +41,9 @@ public class Employee {
      */
     public Employee(String name, double salary) {
         this.name = name;
-        reports = new ArrayList<>();
         this.salary = salary;
         this.orgCost = this.salary;
+        this.reports = new ArrayList<>();
     }
 
     /**

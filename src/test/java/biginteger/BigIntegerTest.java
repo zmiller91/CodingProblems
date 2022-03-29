@@ -24,8 +24,7 @@ public class BigIntegerTest {
     @Test
     void test_add_SumWithNullValue_ShouldThrowException() {
         BigInteger first = new BigInteger("11");
-        BigInteger second = null;
-        assertThrows(IllegalArgumentException.class, () -> first.add(second));
+        assertThrows(NullPointerException.class, () -> first.add(null));
     }
 
     @Test
@@ -34,6 +33,9 @@ public class BigIntegerTest {
         BigInteger second = new BigInteger("111");
 
         BigInteger summed = first.add(second);
+        assertEquals(new BigInteger("122"), summed);
+
+        summed = second.add(first);
         assertEquals(new BigInteger("122"), summed);
     }
 

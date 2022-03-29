@@ -31,6 +31,6 @@ public class AndMatcher implements Matcher {
     @Override
     public boolean matches(File file) {
         checkNotNull(file);
-        return this.matchers.stream().allMatch(m -> m.matches(checkNotNull(file)));
+        return this.matchers.stream().allMatch(m -> m.matches(file));
     }
 }
