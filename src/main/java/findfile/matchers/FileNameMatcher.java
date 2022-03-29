@@ -14,7 +14,7 @@ public class FileNameMatcher implements Matcher {
     public enum NameOperator {
 
         EQUALS( (x, y) -> x.equals(y)),
-        CONTAINS( (x, y) -> y.contains(x)),
+        CONTAINS( (x, y) -> x.contains(y)),
         REGEX( (x, y) -> Pattern.matches(y, x));
 
         private final BiFunction<String, String, Boolean> operation;

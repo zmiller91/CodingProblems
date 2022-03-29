@@ -37,9 +37,9 @@ public class FileNameMatcherTest {
                 Arguments.of("name", "not name", NameOperator.EQUALS, false,"EQUALS returns false not equal"),
                 Arguments.of("name", "name", NameOperator.EQUALS, true, "EQUALS returns true when equal"),
 
-                Arguments.of("not substring", "string", NameOperator.CONTAINS, false, "CONTAINS returns false when not substring"),
-                Arguments.of("substring", "substring", NameOperator.CONTAINS, true, "CONTAINS returns true when equals"),
-                Arguments.of("string", "substring", NameOperator.CONTAINS, true, "CONTAINS returns true when substring"),
+                Arguments.of("string_name", "not substring", NameOperator.CONTAINS, false, "CONTAINS returns false when not substring"),
+                Arguments.of("string_name", "string_name", NameOperator.CONTAINS, true, "CONTAINS returns true when equals"),
+                Arguments.of("string_name", "string", NameOperator.CONTAINS, true, "CONTAINS returns true when substring"),
 
                 Arguments.of("STRING", "^[a-z]+$", NameOperator.REGEX, false, "REGEX returns false when no match"),
                 Arguments.of("string", "^[a-z]+$", NameOperator.REGEX, true, "REGEX returns true when match")
