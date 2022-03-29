@@ -10,6 +10,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class FindFiles {
 
+    /**
+     * Recurses through a directory structure to find all files that match the provided `matcher.`
+     *
+     * @param file root of a directory to search
+     * @param matcher evaluation criteria used to find files
+     * @return all files that match the `matcher`
+     */
     public static List<File> find(File file, Matcher matcher) {
 
         checkNotNull(matcher);

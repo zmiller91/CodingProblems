@@ -2,17 +2,29 @@ package biginteger;
 
 import java.util.Stack;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+/**
+ * Represents sufficiently large numbers that do not fit into a `long` or `integer` datatype.
+ */
 public class BigInteger {
 
     private Node reversedIntegerList;
 
+    /**
+     * Empty constructor, used internally to create and modify the object incrementally during calculations.
+     */
     private BigInteger(){};
+
+    /**
+     * Public constructor used to create BigIntegers. Input must be non-null, non-empty, and only contain numeric
+     * characters.
+     *
+     * @param string representation of the integer
+     */
     public BigInteger(String string){
 
-        if (string == null) {
-            throw new IllegalArgumentException("Input cannot be null.");
-        }
-
+        checkNotNull(string);
         if ("".equals(string)) {
             throw new IllegalArgumentException("Input cannot be empty.");
         }
@@ -26,6 +38,12 @@ public class BigInteger {
         }
     }
 
+    /**
+     * Adds a BigInteger to this BigInteger. The returned value is a new BigInteger object.
+     *
+     * @param bigint to add
+     * @return sum of two BigIntegers
+     */
     public BigInteger add(BigInteger bigint) {
 
         if (bigint == null) {
@@ -67,6 +85,12 @@ public class BigInteger {
 
     }
 
+    /**
+     * Two big integers are considered to be equal if they represent the same numbers.
+     *
+     * @param obj to compare against
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
 
@@ -110,6 +134,10 @@ public class BigInteger {
         return builder.toString();
     }
 
+    /**
+     * Internal class used to create a LinkedList. Each object holds a single digit value that represents a single
+     * digit in the BigInteger.
+     */
     private static class Node {
         private final int value;
         private Node next;

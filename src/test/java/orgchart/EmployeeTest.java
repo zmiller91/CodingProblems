@@ -33,14 +33,14 @@ public class EmployeeTest {
 
     @Test
     void test_orgCost_IsCorrect() {
-        assertEquals(1340, dir.orgCost);
-        assertEquals(220, mgr1.orgCost);
-        assertEquals(120, mgr2.orgCost);
-        assertEquals(110, mgr3.orgCost);
-        assertEquals(10, ic1.orgCost);
-        assertEquals(10, ic2.orgCost);
-        assertEquals(10, ic3.orgCost);
-        assertEquals(10, ic4.orgCost);
+        assertEquals(1340, dir.getOrgCost());
+        assertEquals(220, mgr1.getOrgCost());
+        assertEquals(120, mgr2.getOrgCost());
+        assertEquals(110, mgr3.getOrgCost());
+        assertEquals(10, ic1.getOrgCost());
+        assertEquals(10, ic2.getOrgCost());
+        assertEquals(10, ic3.getOrgCost());
+        assertEquals(10, ic4.getOrgCost());
     }
 
     @Test
@@ -60,11 +60,11 @@ public class EmployeeTest {
         mgr2.removeReports(ic3);
 
         // These should change
-        assertEquals(110, mgr2.orgCost);
-        assertEquals(1330, dir.orgCost);
+        assertEquals(110, mgr2.getOrgCost());
+        assertEquals(1330, dir.getOrgCost());
 
         // This shouldnt
-        assertEquals(220, mgr1.orgCost);
+        assertEquals(220, mgr1.getOrgCost());
 
     }
 
@@ -75,12 +75,12 @@ public class EmployeeTest {
         mgr3.addReports(ic5);
 
         // These should change
-        assertEquals(120, mgr3.orgCost);
-        assertEquals(230, mgr1.orgCost);
-        assertEquals(1350, dir.orgCost);
+        assertEquals(120, mgr3.getOrgCost());
+        assertEquals(230, mgr1.getOrgCost());
+        assertEquals(1350, dir.getOrgCost());
 
         // This shouldn't
-        assertEquals(120, mgr2.orgCost);
+        assertEquals(120, mgr2.getOrgCost());
 
     }
 
