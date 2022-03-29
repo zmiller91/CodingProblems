@@ -6,7 +6,7 @@ import java.util.List;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * Matcher that evaluates other matchers, returning true at least one matcher returns true.
+ * Matcher that evaluates other matchers, returning true if at least one matcher returns true.
  */
 public class OrMatcher implements Matcher {
 
@@ -26,7 +26,7 @@ public class OrMatcher implements Matcher {
      * list was provided to the constructor, then this method will return false.
      *
      * @param file to evaluate
-     * @return true if all matchers are true, otherwise false
+     * @return true if at least one mather returns true, otherwise false
      */
     @Override
     public boolean matches(File file) {
