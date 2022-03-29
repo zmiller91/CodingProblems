@@ -19,7 +19,7 @@ public class BigIntegerTest {
 
     @Test
     void test_add_NullInput_ShouldThrowException() {
-        assertThrows(IllegalArgumentException.class, () -> new BigInteger(null));
+        assertThrows(NullPointerException.class, () -> new BigInteger(null));
     }
 
     @Test
